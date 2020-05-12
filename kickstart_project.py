@@ -12,11 +12,11 @@ def see_project_list():
     project_list = os.listdir(os.getcwd())
     pattern = re.compile(r'(\.\w+$)')
     filtered_projects = list(filter(lambda item: not pattern.search(item), project_list))
-    if len(filtered_projects) != 0:
+    if len(filtered_projects) == 0:
+      print("No projects found in this folder")
+    else:
       for index, project in enumerate(filtered_projects, start=1):
         print(f"{index}: {project}")
-    else:
-      print("No projects found in this folder")
 
 def get_project_name():
   print("\n=> Select project name")
@@ -31,11 +31,13 @@ def get_project_name():
     confirm = input(f"Please confirm project name is {user_input.lower()} Y/N ")
   # construct folder name based on user input
   project_name = user_input.title().replace(" ", "-")
-  if not os.path.exists(f"{os.getcwd()}/{project_name}"):
-    return project_name
-  else:
-    print("Path already exists. Pick another name")
+  # check if path exists
+  if os.path.exists(f"{os.getcwd()}/{project_name}"):
+    print("Path either exists or path name is not valid. Please try again")
     return get_project_name()
+  else:
+    return project_name
+   
 
 def select_language():
   print("\n=> Select language")
@@ -48,7 +50,7 @@ def select_language():
     return languages[user_input - 1]
   else:
     print(f"Your list doesn\'t contain as many languages (max = {len(languages)})")
-    select_language()
+    return select_language()
 
 def initialize_project():
   # create project folder and add README.md with
@@ -62,3 +64,6 @@ def initialize_project():
   sub.run(['git', 'init'])
   sub.run(['git', 'add', '.'])
   sub.run(['git', 'commit', '-m', '"initial commit"'])
+
+see_project_list()
+initialize_project()
