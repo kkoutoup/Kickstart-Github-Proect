@@ -37,7 +37,6 @@ def get_project_name():
     return get_project_name()
   else:
     return project_name
-   
 
 def select_language():
   print("\n=> Select language")
@@ -64,6 +63,3 @@ def initialize_project():
   sub.run(['git', 'init'])
   sub.run(['git', 'add', '.'])
   sub.run(['git', 'commit', '-m', '"initial commit"'])
-
-see_project_list()
-initialize_project()
