@@ -13,10 +13,8 @@ def see_project_list():
     pattern = re.compile(r'(\.\w+$)')
     filtered_projects = list(filter(lambda item: not pattern.search(item), project_list))
     if len(filtered_projects) != 0:
-      counter = 1
-      for project in filtered_projects:
-        print("{}: {}".format(counter, project))
-        counter += 1
+      for index, project in enumerate(filtered_projects, start=1):
+        print(f"{index}: {project}")
     else:
       print("No projects found in this folder")
 
@@ -25,12 +23,12 @@ def get_project_name():
   # ask the user
   user_input = input("What's the name of the project? (use spaces to separate words): ").strip()
   # ask user to confirm
-  confirm = input("Please confirm project name is '{}' Y/N ".format(user_input)).lower()
+  confirm = input(f"Please confirm project name is {user_input.lower()} Y/N ")
   answers = ["y", "n"]
   # repeat ask for confirmation
   while confirm == "n" or confirm not in answers:
     user_input = input("What's the name of the project? (use spaces to separate words): ").strip()
-    confirm = input('Please confirm project name is "{}" Y/N  '.format(user_input)).lower()
+    confirm = input(f"Please confirm project name is {user_input.lower()} Y/N ")
   else:
     project_name = user_input.title().replace(" ", "-")
     return project_name
@@ -42,10 +40,11 @@ def select_language():
     print(f'{index}: {language}')
   user_input = int(input("What language will you be scripting in? Select index ").strip())
   if user_input <= len(languages):
-    print(f'You selected {languages[user_input - 1]}')
-    input()
+    language = languages[user_input - 1]
+    print(f"You selected {language}")
+    return language
   else:
-    print(f'Your list doesn\'t contain as many languages max = {len(languages)}')
+    print(f"Your list doesn\'t contain as many languages max = {len(languages)}")
     select_language()
 
 def initialize_project():
@@ -55,8 +54,13 @@ def initialize_project():
   os.mkdir(project_name)
   os.chdir(os.path.join(os.getcwd(), project_name))
   with open('README.md', "w") as readme:
-    readme.write("# {}".format(project_name))
+    readme.write(f"# {project_name}")
   # initialize repo and do first commit
   sub.run(['git', 'init'])
   sub.run(['git', 'add', '.'])
   sub.run(['git', 'commit', '-m', '"initial commit"'])
+
+
+# see_project_list()
+# select_language()
+# initialize_project()
