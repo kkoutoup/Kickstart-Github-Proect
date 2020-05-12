@@ -40,9 +40,8 @@ def select_language():
     print(f'{index}: {language}')
   user_input = int(input("What language will you be scripting in? Select index ").strip())
   if user_input <= len(languages):
-    language = languages[user_input - 1]
-    print(f"You selected {language}")
-    return language
+    print(f"You selected {languages[user_input - 1]}")
+    return languages[user_input - 1]
   else:
     print(f"Your list doesn\'t contain as many languages max = {len(languages)}")
     select_language()
