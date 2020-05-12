@@ -3,7 +3,7 @@ import subprocess as sub
 
 # see list of projects
 def see_project_list():
-  print("=> Existing projects")
+  print("=> See existing projects")
   # see a list of projects?
   see_projects = input("Do you want to see a list of projects? Y/N ").lower().strip()
   # list folders
@@ -19,7 +19,7 @@ def see_project_list():
       print("No projects found in this folder")
 
 def get_project_name():
-  print("=> Set project name")
+  print("\n=> Select project name")
   # ask the user
   user_input = input("What's the name of the project? (use spaces to separate words): ").strip()
   # ask user to confirm
@@ -29,12 +29,16 @@ def get_project_name():
   while confirm == "n" or confirm not in answers:
     user_input = input("What's the name of the project? (use spaces to separate words): ").strip()
     confirm = input(f"Please confirm project name is {user_input.lower()} Y/N ")
-  else:
-    project_name = user_input.title().replace(" ", "-")
+  # construct folder name based on user input
+  project_name = user_input.title().replace(" ", "-")
+  if not os.path.exists(f"{os.getcwd()}/{project_name}"):
     return project_name
+  else:
+    print("Path already exists. Pick another name")
+    return get_project_name()
 
 def select_language():
-  print("=> Select language")
+  print("\n=> Select language")
   languages = ["Python", "Ruby", "Javascript", "None"]
   for index, language in enumerate(languages, start=1):
     print(f'{index}: {language}')
@@ -43,7 +47,7 @@ def select_language():
     print(f"You selected {languages[user_input - 1]}")
     return languages[user_input - 1]
   else:
-    print(f"Your list doesn\'t contain as many languages max = {len(languages)}")
+    print(f"Your list doesn\'t contain as many languages (max = {len(languages)})")
     select_language()
 
 def initialize_project():
@@ -60,6 +64,4 @@ def initialize_project():
   sub.run(['git', 'commit', '-m', '"initial commit"'])
 
 
-# see_project_list()
-# select_language()
-# initialize_project()
+initialize_project()
