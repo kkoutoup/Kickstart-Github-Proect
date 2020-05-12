@@ -62,6 +62,3 @@ def initialize_project():
   sub.run(['git', 'init'])
   sub.run(['git', 'add', '.'])
   sub.run(['git', 'commit', '-m', '"initial commit"'])
-
-
-initialize_project()
