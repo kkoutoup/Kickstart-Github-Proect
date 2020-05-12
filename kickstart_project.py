@@ -12,6 +12,7 @@ def see_project_list():
     project_list = os.listdir(os.getcwd())
     pattern = re.compile(r'(\.\w+$)')
     filtered_projects = list(filter(lambda item: not pattern.search(item), project_list))
+    # check folders are present
     if len(filtered_projects) == 0:
       print("No projects found in this folder")
     else:
@@ -33,7 +34,7 @@ def get_project_name():
   project_name = user_input.title().replace(" ", "-")
   # check if path exists
   if os.path.exists(f"{os.getcwd()}/{project_name}"):
-    print("Path either exists or path name is not valid. Please try again")
+    print("Path either exists or project name is not valid. Please try again")
     return get_project_name()
   else:
     return project_name
@@ -63,3 +64,7 @@ def initialize_project():
   sub.run(['git', 'init'])
   sub.run(['git', 'add', '.'])
   sub.run(['git', 'commit', '-m', '"initial commit"'])
+
+see_project_list()
+select_language()
+initialize_project()
