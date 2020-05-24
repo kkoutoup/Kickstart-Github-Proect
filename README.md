@@ -9,6 +9,10 @@ You will need a folder that hosts your projects (`Projects` in the file structur
 Projects-Folder
 |_kickstart_project.py
 ```
+## Setup
+After placing the Python script in your folder run the following command for Linux:
+`chmod +x kickstart_project.py`
+This will grant the system access to the file so that you can run it from the bash shell.
 ### Execution
 Open your shell, `cd` into your `Projects` folder where the Python script is saved and type `./kickstart_project.py`. This will launch the Python script that will ask you:
 1. If you want to see a list the list of current folders/projects in the same location
