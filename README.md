@@ -7,6 +7,10 @@ A script that automates the steps of creating a new project on git and github.
 You will need a folder that hosts your projects with `kickstart_project.py` saved inside
 ```
 Projects-Folder
+|_Dependencies
+    |_project_name.py
+    |_see_project_list.py
+    |_select_language.py
 |_kickstart_project.py
 ```
 ## Setup
