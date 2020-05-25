@@ -2,7 +2,7 @@
 ## Category
 Automation
 ## Description
-A script that automates the steps of creating a new project on git and github
+A script that automates the steps of creating a new project on git and github.
 ## File structure
 You will need a folder that hosts your projects with `kickstart_project.py` saved inside
 ```
@@ -14,7 +14,7 @@ After placing the Python script in your folder run the following command for Lin
 `chmod +x kickstart_project.py`
 This will grant the system access to the file so that you can run it from the bash shell.
 ## Execution
-Open your shell, `cd` into your `Projects` folder where the Python script is saved and type `./kickstart_project.py`. This will launch the Python script that will ask you:
+Open your shell, `cd` into your `Projects-folder` folder where the Python script is saved and type `./kickstart_project.py`. This will launch the Python script that will ask you:
 1. If you want to see a list the list of current folders/projects in the same location
 2. What language you'll be scripting in
 3. To confirm the name of your project
