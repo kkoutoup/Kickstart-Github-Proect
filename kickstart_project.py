@@ -3,9 +3,9 @@ import os, re
 import subprocess as sub
 
 # Local dependencies
-from project_list import see_project_list
-from project_name import set_project_name
-from select_language import select_language, set_language_extension
+from _project_list import see_project_list
+from _project_name import set_project_name
+from _select_language import select_language, set_language_extension
 
 def initialize_project():
   # show list of existing projects
