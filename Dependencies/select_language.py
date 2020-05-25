@@ -1,7 +1,7 @@
 # What language will you be scripting in?
 def select_language():
   print("\n=> Select language")
-  languages = ["Python", "Ruby", "Javascript", "PHP"]
+  languages = ["Python", "Ruby", "Javascript", "HTML"]
   for index, language in enumerate(languages, start = 1):
     print(f'{index}: {language}')
   user_input = int(input("What language will you be scripting in? Select index ").strip())
