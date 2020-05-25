@@ -16,7 +16,7 @@ def see_project_list():
       print("No projects found in this folder")
     else:
       for index, project in enumerate(filtered_projects, start = 1):
-        if project == "__pycache__":
-          pass
+        if project == "__pycache__" or "Dependencies":
+          print("No projects found in this folder")
         else:
           print(f"{index}: {project}")

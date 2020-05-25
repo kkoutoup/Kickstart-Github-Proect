@@ -1,11 +1,15 @@
 #! /usr/bin/env python3
-import os, re
+import os
+import re
+import sys
 import subprocess as sub
 
-# Local dependencies
-from _project_list import see_project_list
-from _project_name import set_project_name
-from _select_language import select_language, set_language_extension
+# read imports from folder
+sys.path.append('/home/kkoutoup/Projects/Kickstart-Github-Project/Dependencies')
+
+from Dependencies.see_project_list import see_project_list
+from Dependencies.project_name import set_project_name
+from Dependencies.select_language import select_language, set_language_extension
 
 def initialize_project():
   # show list of existing projects
@@ -20,7 +24,7 @@ def initialize_project():
   # initialize repo and do first commit
   sub.run(['git', 'init'])
   sub.run(['git', 'add', '.'])
-  sub.run(['git', 'commit', '-m', '"initial commit"'])
+  sub.run(['git', 'commit', '-m', '"Initial commit"'])
 
 if __name__=="__main__":
   initialize_project()
