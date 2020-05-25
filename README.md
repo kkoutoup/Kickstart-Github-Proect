@@ -24,7 +24,7 @@ Next the script will use your input to:
 2. Initialize it as a git repository
 3. Create a REAMDE.md file  with the project name as an `h1`
 ## Dependencies
-Built with Python and
+Built with Python and:
 - [selenium](https://selenium-python.readthedocs.io/index.html)
 - os
 - re
