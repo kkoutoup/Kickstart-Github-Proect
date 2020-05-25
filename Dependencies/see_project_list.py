@@ -12,10 +12,10 @@ def see_project_list():
     pattern = re.compile(r'(\.\w+$)')
     filtered_projects = list(filter(lambda item: not pattern.search(item), project_list))
     # check folders are present
-    if len(filtered_projects) == 0:
+    exclude = ["share", "bin", "include", "lib", "lib64", "Dependencies"] # exclude venv and dependencies folders
+    if len(filtered_projects) == 0 or sorted(filtered_projects) == sorted(exclude):
       print("No projects found in this folder")
     else:
       for project in filtered_projects:
-        exclude = ["share", "bin", "include", "lib", "lib64", "Dependencies"] # exclude venv and dependencies folders
         if project not in exclude:
           print(f"- {project}")
