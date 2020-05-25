@@ -34,5 +34,5 @@ Built with Python and:
 2. Set environment variables (Linux)
     - open your terminal and `cd` to your root directory
     - go to your bash profile with `nano` editor with `nano ~/.bash_profile`
-    - type `export PYTHONPATH="path/to/dependencies/folder"` (i.e. "home/username/Projects/Kickstart-Github-Project/Dependencies")
+    - type `export PYTHONPATH="path/to/dependencies/folder"` (i.e. `"home/username/Projects/Kickstart-Github-Project/Dependencies"`)
     - save and exit
