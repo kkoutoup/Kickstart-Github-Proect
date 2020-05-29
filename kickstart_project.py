@@ -18,7 +18,6 @@ def initialize_project():
   # show list of existing projects
   see_project_list()
   # create project folder and coding file
-  # a test comment
   project_name = set_project_name()
   os.mkdir(project_name)
   os.chdir(os.path.join(os.getcwd(), project_name))
