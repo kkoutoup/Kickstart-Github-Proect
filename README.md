@@ -26,10 +26,9 @@ Projects-Folder
 
     This will allow the script to read from the `Dependencies` folder if it was an imported module.
 ## Execution
-Open your shell, `cd` into your `Projects-folder` folder where the Python script is saved and type `./kickstart_project.py`. This will launch the Python script that will ask you:
-1. If you want to see a list the list of current folders/projects in the same location
-2. What language you'll be scripting in
-3. To confirm the name of your project
+Open your shell, `cd` into your `Projects-folder` folder where the Python script is saved and type `./kickstart_project.py`. 
+1. Select a name for your project
+2. Select what language you'll be scripting in
 
 Next the script will use your input to:
 1. Create a new folder for your project named in UpperCamelCase with dashes (-) in between words
