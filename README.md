@@ -23,6 +23,7 @@ Projects-Folder
     - go to your bash profile with `nano` editor with `nano ~/.bash_profile`
     - type `export PYTHONPATH="path/to/dependencies/folder"` (i.e. `"home/username/Projects/Kickstart-Github-Project/Dependencies"`)
     - save and exit
+
 This will allow the script to read from the `Dependencies` folder if it was an imported module.
 ## Execution
 Open your shell, `cd` into your `Projects-folder` folder where the Python script is saved and type `./kickstart_project.py`. This will launch the Python script that will ask you:
