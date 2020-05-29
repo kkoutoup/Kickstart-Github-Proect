@@ -40,4 +40,3 @@ Built with Python and:
 - os
 - re
 - subprocess
-## Note
